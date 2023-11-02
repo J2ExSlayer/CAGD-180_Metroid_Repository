@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Natalie Gallegos
 //10/26/2023
@@ -16,6 +18,10 @@ public class Player : MonoBehaviour
 
     public int health = 99;
 
+    public bool facingRight = true;
+
+    private bool canTakeDamage = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +36,23 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            
+            if (facingRight == true)
+            {
+                transform.Rotate(Vector3.up * 180);
+                facingRight = false;
+            }
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+
+            if (facingRight == false)
+            {
+                transform.Rotate(Vector3.up * 180);
+                facingRight = true;
+            }
         }
 
 
@@ -73,7 +91,30 @@ public class Player : MonoBehaviour
 
     }
 
+    /*
+    private void Respawn()
+    {
+        if (//can take damage)
+            lives--;
+        transform.position = starPos;
 
+        StartCoroutine(SetInvincible());
+
+        if (lives == 0)
+        {
+            SceneManager.LoadScene();
+            Debug.Log("Game Ends");
+        }
+
+        IEnumerator SetInvincible()
+        {
+            canTakeDamage = false;
+            yield return new WaitForSeconds(5f);
+            canTakeDamage = true;
+        }
+
+    }
+    */
 
 
 

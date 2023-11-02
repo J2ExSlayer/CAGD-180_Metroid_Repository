@@ -7,7 +7,9 @@ public class Bullet : MonoBehaviour
 {
 
     public float speed;
+
     public bool goingRight;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +36,8 @@ public class Bullet : MonoBehaviour
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
+     
+
     }
     
 
