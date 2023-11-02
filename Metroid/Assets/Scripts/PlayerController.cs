@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 10f;
 
+    public int health = 99;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,10 @@ public class Player : MonoBehaviour
     }
 
 
-
+    private void damageHP()
+    {
+       
+    }
 
     private void HandleJump()
     {
