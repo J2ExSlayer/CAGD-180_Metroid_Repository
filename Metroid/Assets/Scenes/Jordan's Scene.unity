@@ -628,9 +628,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7722303063146205203, guid: 360a7d17fe6c1ea439b28486d7af8e52, type: 3}
-  spawnrate: 1
+  spawnrate: 5
+  fireRate: 2
   shootRight: 1
   facingRight: 1
+  justShot: 0
+  gunShot: 0
 --- !u!1 &1471379240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1470632535134317819, guid: 730585df64970d84380cfdf71594269a, type: 3}

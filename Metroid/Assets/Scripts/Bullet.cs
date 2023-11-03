@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DespawnDelay());
     }
 
     // Update is called once per frame
@@ -39,7 +39,12 @@ public class Bullet : MonoBehaviour
      
 
     }
-    
+
+    IEnumerator DespawnDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(this.gameObject);
+    }
 
 
 }

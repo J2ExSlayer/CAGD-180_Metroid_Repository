@@ -94,6 +94,10 @@ public class Player : MonoBehaviour
     /*
     private void Respawn()
     {
+
+        GetComponent<Transform>().position = start_position;
+        StartCoroutine(Blink());
+
         if (//can take damage)
             lives--;
         transform.position = starPos;
@@ -114,6 +118,30 @@ public class Player : MonoBehaviour
         }
 
     }
+
+
+    public IEnumerator Blink()
+    {
+        for (int index = 0; index < 30; index++)
+        {
+            if (index % 2 == 0)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
+            yield return new WaitForSeconds(.1f);
+        }
+        GetComponent<MeshRenderer>().enabled = true;
+    }
+
+
+
+
+
+
     */
 
 
