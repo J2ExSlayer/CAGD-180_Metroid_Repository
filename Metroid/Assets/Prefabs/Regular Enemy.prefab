@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5499668043946105333}
   - component: {fileID: 543702007087546100}
   m_Layer: 0
-  m_Name: SideToSideEnemy
+  m_Name: Regular Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
