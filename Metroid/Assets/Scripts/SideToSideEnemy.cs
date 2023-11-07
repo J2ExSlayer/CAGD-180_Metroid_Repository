@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Natalie Gallegos
-//10/31/2023
+//11/07/2023
 //This script focuses on the movement of the enemy, going side to side.
 
 
@@ -15,6 +15,8 @@ public class SideToSideEnemy : MonoBehaviour
 
     private float startingX;
     private bool movingRight = true;
+
+    public int HP = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -56,4 +58,11 @@ public class SideToSideEnemy : MonoBehaviour
 
 
     }
+
+    //this indicates the health of the enemy, which would be 1
+    private void enemyHP(int value)
+    {
+        HP -= value;
+    }
+
 }

@@ -75,9 +75,16 @@ public class Player : MonoBehaviour
             damageHP(15);
             Debug.Log("player has taken damage, -15");
         }
+        if(other.gameObject.tag == "HardEnemy")
+        {
+            damageHP(35);
+            Debug.Log("player has taken damage, -35");
+        }
     }
 
 
+    //this gives out the health of the player, and the value helps take away health from the other enemys
+    //and will also help with adding in health from the other items
     private void damageHP(int value)
     {
         health -= value;
