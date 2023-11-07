@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //Natalie Gallegos
-//10/26/2023
+//11/07/2023
 //this script is for the player movement 
 
 public class Player : MonoBehaviour
@@ -63,13 +63,25 @@ public class Player : MonoBehaviour
         }
 
 
+       
+
 
     }
 
-
-    private void damageHP()
+    private void OnTriggerEnter(Collider other)
     {
-       
+        if(other.gameObject.tag == "Enemy")
+        {
+            damageHP(15);
+            Debug.Log("player has taken damage, -15");
+        }
+    }
+
+
+    private void damageHP(int value)
+    {
+        health -= value;
+
     }
 
     private void HandleJump()
