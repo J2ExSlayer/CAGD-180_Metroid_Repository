@@ -22,11 +22,16 @@ public class Player : MonoBehaviour
 
     private bool canTakeDamage = true;
 
+    private Vector3 startPos;
+
+    public int lives = 3;
+
     // Start is called before the first frame update
     void Start()
     {
         //this gets the rigidbody component off of the this object and stores a reference to it
-        rigidbodyRef = GetComponent<Rigidbody>(); 
+        rigidbodyRef = GetComponent<Rigidbody>();
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -74,6 +79,7 @@ public class Player : MonoBehaviour
         {
             damageHP(15);
             Debug.Log("player has taken damage, -15");
+            Respawn();
         }
         if(other.gameObject.tag == "HardEnemy")
         {
@@ -83,6 +89,28 @@ public class Player : MonoBehaviour
     }
 
 
+    private void Respawn()
+    {
+
+
+        if (health == 0)
+        {
+            lives--;
+            transform.position = startPos;
+            if (lives == 0)
+            {
+                Debug.Log("Game Ends");
+                return; // comeback and change this to a change Scene with scenemanager once UI is ready
+            }
+            healthReset(99);
+            Debug.Log("Health Reset");
+        }
+    }
+
+    private void healthReset(int value)
+    {
+        health += value;
+    }
     //this gives out the health of the player, and the value helps take away health from the other enemys
     //and will also help with adding in health from the other items
     private void damageHP(int value)
