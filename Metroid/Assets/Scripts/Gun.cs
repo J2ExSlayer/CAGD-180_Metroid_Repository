@@ -49,25 +49,25 @@ public class Gun : MonoBehaviour
         }
 
 
-        /*
-            if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.W))
+        
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
             {
                 ShootBulletUpDiagonal();
             }
-            if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
             {
                 ShootBulletUpDiagonal();
             }
 
-            if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
             {
                 ShootBulletDownDiagonal();
             }
-            if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S) && Input.GetMouseButtonUp(0) && gunShot == false)
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
             {
                 ShootBulletDownDiagonal();
             }
-        */
+        
             if (Input.GetMouseButtonUp(0) && gunShot == false)
             {
 
@@ -76,14 +76,25 @@ public class Gun : MonoBehaviour
 
 
             }
-            
+
+            if (Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
+            {
+                ShootBulletUp();
+            }
+
+            if (Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
+            {
+                ShootBulletDown();
+            }
+
+
     }
 
     private void ShootBullet()
     {
         GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-        bulletInstance.transform.Rotate(new Vector3(0, 0, 45));
+        
 
 
         if (facingRight == true)
@@ -99,7 +110,47 @@ public class Gun : MonoBehaviour
         
     }
 
-    /*
+    private void ShootBulletUp()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+
+        bulletInstance.transform.Rotate(new Vector3(0, 0, 90));
+
+        if (facingRight == true)
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+
+        }
+        else
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = false;
+        }
+        StartCoroutine(FireRate());
+
+    }
+
+    private void ShootBulletDown()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+        bulletInstance.transform.Rotate(new Vector3(0, 0, -90));
+
+
+        if (facingRight == true)
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+
+        }
+        else
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = false;
+        }
+        StartCoroutine(FireRate());
+
+    }
+
+
 
     private void ShootBulletUpDiagonal()
     {
@@ -140,7 +191,7 @@ public class Gun : MonoBehaviour
         StartCoroutine(FireRate());
 
     }
-    */
+    
 
 
     IEnumerator FireRate()
