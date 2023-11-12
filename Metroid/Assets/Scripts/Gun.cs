@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.A))
         {
 
@@ -47,21 +48,44 @@ public class Gun : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && gunShot == false)
-        {
 
-            ShootBullet();
+        /*
+            if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.W))
+            {
+                ShootBulletUpDiagonal();
+            }
+            if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.W))
+            {
+                ShootBulletUpDiagonal();
+            }
+
+            if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.S))
+            {
+                ShootBulletDownDiagonal();
+            }
+            if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.S) && Input.GetMouseButtonUp(0) && gunShot == false)
+            {
+                ShootBulletDownDiagonal();
+            }
+        */
+            if (Input.GetMouseButtonUp(0) && gunShot == false)
+            {
+
+                ShootBullet();
+
+
+
+            }
             
-
-
-        }
     }
 
     private void ShootBullet()
     {
         GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
-        
+        bulletInstance.transform.Rotate(new Vector3(0, 0, 45));
+
+
         if (facingRight == true)
         {
             bulletInstance.GetComponent<Bullet>().goingRight = shootRight;
@@ -74,6 +98,51 @@ public class Gun : MonoBehaviour
         StartCoroutine(FireRate());
         
     }
+
+    /*
+
+    private void ShootBulletUpDiagonal()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+        bulletInstance.transform.Rotate(new Vector3(0, 0, 45));
+
+
+        if (facingRight == true)
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+
+        }
+        else
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = false;
+        }
+        StartCoroutine(FireRate());
+
+    }
+
+    private void ShootBulletDownDiagonal()
+    {
+        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+        bulletInstance.transform.Rotate(new Vector3(0, 0, -45));
+
+
+        if (facingRight == true)
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = shootRight;
+
+        }
+        else
+        {
+            bulletInstance.GetComponent<Bullet>().goingRight = false;
+        }
+        StartCoroutine(FireRate());
+
+    }
+    */
+
+
     IEnumerator FireRate()
     {
         gunShot = true;

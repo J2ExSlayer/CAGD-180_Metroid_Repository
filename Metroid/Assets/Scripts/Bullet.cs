@@ -30,11 +30,11 @@ public class Bullet : MonoBehaviour
     {
         if (goingRight)
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
         else
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
      
 
