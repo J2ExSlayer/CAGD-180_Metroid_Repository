@@ -100,14 +100,14 @@ public class Player : MonoBehaviour
     {
 
 
-        if (health == 0)
+        if (health <= 0)
         {
             lives--;
             transform.position = startPos;
             if (lives == 0)
             {
                 Debug.Log("Game Ends");
-                return; // comeback and change this to a change Scene with scenemanager once UI is ready
+                SceneManager.LoadScene(2);
             }
             healthReset(99);
             Debug.Log("Health Reset");
@@ -116,7 +116,9 @@ public class Player : MonoBehaviour
 
     private void healthReset(int value)
     {
+        health = 0;
         health += value;
+
     }
     //this gives out the health of the player, and the value helps take away health from the other enemys
     //and will also help with adding in health from the other items
