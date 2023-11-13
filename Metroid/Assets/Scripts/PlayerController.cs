@@ -87,6 +87,12 @@ public class Player : MonoBehaviour
             Debug.Log("player has taken damage, -35");
             Respawn();
         }
+        if (other.gameObject.tag == "Portal")
+        {
+            transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
+            startPos = transform.position;
+        }
+
     }
 
 
