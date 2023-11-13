@@ -16,13 +16,17 @@ public class SideToSideEnemy : MonoBehaviour
     private float startingX;
     private bool movingRight = true;
 
-    public int HP = 1;
+    
+
+    public int enemyHP = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         //when the scene starts, it stores the intial X value of this object
         startingX = transform.position.x;
+        
+
     }
 
     // Update is called once per frame
@@ -44,7 +48,7 @@ public class SideToSideEnemy : MonoBehaviour
         else
         {
             //if the object is not farther than the start position + Left travel dist, it can move left
-            if(transform.position.x >= startingX + travelDistanceLeft)
+            if (transform.position.x >= startingX + travelDistanceLeft)
             {
                 transform.position += Vector3.left * speed * Time.deltaTime;
             }
@@ -55,14 +59,34 @@ public class SideToSideEnemy : MonoBehaviour
             }
         }
 
-
-
     }
 
-    //this indicates the health of the enemy, which would be 1
-    private void enemyHP(int value)
+
+
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        HP -= value;
+        if(other.gameObject.tag == "Bullet")
+        {
+            damageEnemyHP(1);
+            Debug.Log("player has taken damage, -1");
+            if(enemyHP == 0)
+            {
+                Destroy(this.gameObject);
+            }
+            
+        }
     }
 
+
+
+
+
+    //this indicates the health of the enemy, and depending from the value will subtract it from them
+    public void damageEnemyHP(int value)
+    {
+        enemyHP -= value;
+    }
+    
 }

@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public SideToSideEnemy regEnemy;
 
     public float speed;
 
     public bool goingRight;
-    
 
-    private void OnTriggerEnter(Collider other)
+    public int dmgHP = 1;
+
+    public void OnTriggerEnter(Collider other)
     {
         
-            Destroy(this.gameObject);
+        Destroy(this.gameObject);
         
     }
 
@@ -39,6 +41,16 @@ public class Bullet : MonoBehaviour
      
 
     }
+
+   private void ObjectDies()
+    {
+        if (regEnemy.enemyHP == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
 
     IEnumerator DespawnDelay()
     {

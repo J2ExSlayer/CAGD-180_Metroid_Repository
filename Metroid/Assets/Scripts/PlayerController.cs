@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
         {
             damageHP(35);
             Debug.Log("player has taken damage, -35");
+            Respawn();
         }
     }
 
