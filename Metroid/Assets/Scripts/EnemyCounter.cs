@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyCounter : MonoBehaviour
 {
-
+    /*
     public int enemiesKilled;
 
     public bool enemyDied;
@@ -25,6 +25,6 @@ public class EnemyCounter : MonoBehaviour
 
     
     
-    
+    */
     
 }
