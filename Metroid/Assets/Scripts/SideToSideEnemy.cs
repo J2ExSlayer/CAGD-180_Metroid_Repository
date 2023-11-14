@@ -71,11 +71,21 @@ public class SideToSideEnemy : MonoBehaviour
         {
             DamageEnemyHP(1);
             Debug.Log("enemy has taken damage, -1");
-            if(enemyHP == 0)
+            if(enemyHP <= 0)
             {
                 Destroy(this.gameObject);
             }
             
+        }
+        if (other.gameObject.tag == "Heavy Bullet")
+        {
+            DamageEnemyHP(3);
+            Debug.Log("enemy has taken damage, -3");
+            if (enemyHP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+
         }
     }
 

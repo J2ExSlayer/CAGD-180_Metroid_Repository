@@ -10,6 +10,7 @@ TagManager:
   - Portal
   - Extra Health
   - Health Pack
+  - Heavy Bullet
   layers:
   - Default
   - TransparentFX
