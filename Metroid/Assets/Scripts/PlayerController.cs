@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
 
     public int lives = 3;
 
+    public Gun gun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,6 +126,13 @@ public class Player : MonoBehaviour
             Debug.Log("pick up health pack");
             
             
+        }
+
+        if (other.gameObject.tag == "Heavy Pickup")
+        {
+
+            gun.GetComponent<Gun>().bullet = false;
+            other.gameObject.SetActive(false);
         }
 
     }

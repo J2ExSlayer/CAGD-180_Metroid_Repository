@@ -11,6 +11,7 @@ TagManager:
   - Extra Health
   - Health Pack
   - Heavy Bullet
+  - Heavy Pickup
   layers:
   - Default
   - TransparentFX

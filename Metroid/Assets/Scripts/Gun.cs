@@ -10,6 +10,8 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject heavyBulletPrefab;
 
+    public Player player;
+
     public float spawnrate = 1f;
     public float fireRate;
 
@@ -55,7 +57,7 @@ public class Gun : MonoBehaviour
         
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletUpDiagonal();
             }
@@ -68,7 +70,7 @@ public class Gun : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletUpDiagonal();
             }
@@ -81,7 +83,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletDownDiagonal();
             }
@@ -93,7 +95,7 @@ public class Gun : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletDownDiagonal();
             }
@@ -105,7 +107,7 @@ public class Gun : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBullet();
             }
@@ -120,7 +122,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletUp();
             }
@@ -133,7 +135,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S) && Input.GetMouseButton(0) && gunShot == false)
         {
-            if (bullet == false)
+            if (bullet == true)
             {
                 ShootBulletDown();
             }
@@ -153,15 +155,8 @@ public class Gun : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet")
-        {
-            //BulletActive(true);
-        }
-        if (other.gameObject.tag == "Heavy Bullet")
-        {
-            //HeavyBulletActive(false);
-            
-        }    
+        
+        
     }
 
     private void ShootBullet()
