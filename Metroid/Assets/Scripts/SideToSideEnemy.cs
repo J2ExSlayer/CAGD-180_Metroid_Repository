@@ -69,7 +69,7 @@ public class SideToSideEnemy : MonoBehaviour
     {
         if(other.gameObject.tag == "Bullet")
         {
-            damageEnemyHP(1);
+            DamageEnemyHP(1);
             Debug.Log("enemy has taken damage, -1");
             if(enemyHP == 0)
             {
@@ -84,7 +84,7 @@ public class SideToSideEnemy : MonoBehaviour
 
 
     //this indicates the health of the enemy, and depending from the value will subtract it from them
-    public void damageEnemyHP(int value)
+    public void DamageEnemyHP(int value)
     {
         enemyHP -= value;
     }

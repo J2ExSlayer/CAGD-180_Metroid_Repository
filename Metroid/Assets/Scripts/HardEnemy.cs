@@ -72,7 +72,7 @@ public class HardEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            damageEnemyHP(1);
+            DamageEnemyHP(1);
             Debug.Log("enemy has taken damage, -1");
             if (enemyHP == 0)
             {
@@ -86,7 +86,7 @@ public class HardEnemy : MonoBehaviour
 
 
     //this indicates the health of the enemy, HP = 10
-    public void damageEnemyHP(int value)
+    public void DamageEnemyHP(int value)
     {
         enemyHP -= value;
     }
