@@ -134,6 +134,11 @@ public class Player : MonoBehaviour
             gun.GetComponent<Gun>().bullet = false;
             other.gameObject.SetActive(false);
         }
+        if (other.gameObject.tag == "Jump Pack")
+        {
+            jumpForce = jumpForce * 2;
+            other.gameObject.SetActive(false);
+        }
 
     }
 
