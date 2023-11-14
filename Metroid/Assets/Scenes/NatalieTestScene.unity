@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06bfdca9e9c9f1248845696e2259b80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  enemyHP: 10
   travelDistanceRight: 3
   travelDistanceLeft: -3
   speed: 3
@@ -460,8 +460,10 @@ MonoBehaviour:
   speed: 10
   jumpForce: 10
   health: 99
+  baseHealth: 99
   maxHealth: 100
   facingRight: 1
+  extraHealth: 0
   lives: 3
 --- !u!1 &1157126901896923605
 GameObject:

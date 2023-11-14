@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //Natalie Gallegos
-//11/07/2023
+//11/13/2023
 //this script is for the player movement 
 
 public class Player : MonoBehaviour
@@ -131,7 +131,8 @@ public class Player : MonoBehaviour
 
     private void Respawn()
     {
-
+        GetComponent<Transform>().position = startPos;
+        StartCoroutine(Blink());
 
         if (health <= 0)
         {
@@ -175,7 +176,7 @@ public class Player : MonoBehaviour
             Debug.Log("Player is not touching the ground so they can't jump");
         }
 
-       // rigidbodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+       
 
 
     }
@@ -207,7 +208,7 @@ public class Player : MonoBehaviour
         }
 
     }
-
+    */
 
     public IEnumerator Blink()
     {
@@ -231,7 +232,7 @@ public class Player : MonoBehaviour
 
 
 
-    */
+    
 
 
 
