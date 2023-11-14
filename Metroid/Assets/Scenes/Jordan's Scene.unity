@@ -336,8 +336,8 @@ GameObject:
   - component: {fileID: 713808939}
   - component: {fileID: 713808938}
   m_Layer: 0
-  m_Name: Health Pick-Up
-  m_TagString: Untagged
+  m_Name: Health Pack
+  m_TagString: Health Pack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,11 +422,11 @@ Transform:
   m_GameObject: {fileID: 713808937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.7499995, y: -1, z: -0.32}
+  m_LocalPosition: {x: -11.4196, y: 1.745466, z: 0.15645093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1957557643}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &713808942
 MonoBehaviour:
@@ -814,38 +814,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1957557642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1957557643}
-  m_Layer: 0
-  m_Name: Items
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1957557643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957557642}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6696, y: 2.745466, z: 0.47645092}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 713808941}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820066630714882330 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1157126902395158356, guid: 18545fe7f09b8a64e850fdb738a4e4de, type: 3}
@@ -936,4 +904,4 @@ SceneRoots:
   - {fileID: 148537875}
   - {fileID: 1771198419}
   - {fileID: 1175661699}
-  - {fileID: 1957557643}
+  - {fileID: 713808941}

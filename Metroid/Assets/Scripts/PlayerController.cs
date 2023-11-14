@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 10f;
 
+    
     public int health = 99;
     public int maxHealth = 100;
 

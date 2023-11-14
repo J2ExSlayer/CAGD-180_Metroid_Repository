@@ -9,6 +9,7 @@ TagManager:
   - HardEnemy
   - Portal
   - Extra Health
+  - Health Pack
   layers:
   - Default
   - TransparentFX
