@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 10f;
 
     public int health = 99;
+    public int maxHealth = 100;
 
     public bool facingRight = true;
 
@@ -77,13 +78,13 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            DamageHP(15);
+            damageHP(15);
             Debug.Log("player has taken damage, -15");
             Respawn();
         }
         if(other.gameObject.tag == "HardEnemy")
         {
-            DamageHP(35);
+            damageHP(35);
             Debug.Log("player has taken damage, -35");
             Respawn();
         }
@@ -92,11 +93,11 @@ public class Player : MonoBehaviour
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
         }
-        if (other.gameObject.tag =="Health Pick-Up")
+        if(other.gameObject.tag=="Extra Health")
         {
-            Debug.Log("player picks up health pack, +20");
-            HealthPack(20);
-                
+            maxHealth += 100;
+            health = maxHealth;
+            Debug.Log("pick up health");
         }
 
     }
@@ -115,16 +116,12 @@ public class Player : MonoBehaviour
                 Debug.Log("Game Ends");
                 SceneManager.LoadScene(2);
             }
-            HealthReset(99);
+            healthReset(99);
             Debug.Log("Health Reset");
         }
     }
 
-    private void HealthPack(int value)
-    {
-        health += value;
-    }
-    private void HealthReset(int value)
+    private void healthReset(int value)
     {
         health = 0;
         health += value;
@@ -132,7 +129,7 @@ public class Player : MonoBehaviour
     }
     //this gives out the health of the player, and the value helps take away health from the other enemys
     //and will also help with adding in health from the other items
-    private void DamageHP(int value)
+    private void damageHP(int value)
     {
         health -= value;
 
