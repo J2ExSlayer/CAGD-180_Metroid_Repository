@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class HardEnemy : MonoBehaviour
 {
-    public int HP = 10;
+    public int enemyHP = 10;
 
     public float travelDistanceRight = 0;
     public float travelDistanceLeft = 0;
@@ -68,10 +68,27 @@ public class HardEnemy : MonoBehaviour
     }
 
 
-    //this indicates the health of the enemy, HP = 10
-    private void enemyHP(int value)
+    private void OnTriggerEnter(Collider other)
     {
-        HP -= value;
+        if (other.gameObject.tag == "Bullet")
+        {
+            damageEnemyHP(1);
+            Debug.Log("enemy has taken damage, -1");
+            if (enemyHP == 0)
+            {
+                Destroy(this.gameObject);
+            }
+
+        }
+    }
+
+
+
+
+    //this indicates the health of the enemy, HP = 10
+    public void damageEnemyHP(int value)
+    {
+        enemyHP -= value;
     }
 
 

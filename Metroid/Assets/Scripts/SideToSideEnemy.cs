@@ -70,7 +70,7 @@ public class SideToSideEnemy : MonoBehaviour
         if(other.gameObject.tag == "Bullet")
         {
             damageEnemyHP(1);
-            Debug.Log("player has taken damage, -1");
+            Debug.Log("enemy has taken damage, -1");
             if(enemyHP == 0)
             {
                 Destroy(this.gameObject);
