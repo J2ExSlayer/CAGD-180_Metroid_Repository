@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 10f;
 
     public int health = 99;
+    public int maxHealth = 100;
 
     public bool facingRight = true;
 
@@ -91,6 +92,12 @@ public class Player : MonoBehaviour
         {
             transform.position = other.gameObject.GetComponent<Portal>().teleportPoint.transform.position;
             startPos = transform.position;
+        }
+        if(other.gameObject.tag=="Extra Health")
+        {
+            maxHealth += 100;
+            health = maxHealth;
+            Debug.Log("pick up health");
         }
 
     }
