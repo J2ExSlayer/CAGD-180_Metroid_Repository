@@ -13,12 +13,7 @@ public class Bullet : MonoBehaviour
 
     public int dmgHP = 1;
 
-    public void OnTriggerEnter(Collider other)
-    {
-        
-        Destroy(this.gameObject);
-        
-    }
+    
 
 
     // Start is called before the first frame update
@@ -57,6 +52,11 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
     }
+    public void OnTriggerEnter(Collider other)
+    {
 
+        Destroy(this.gameObject);
+
+    }
 
 }
